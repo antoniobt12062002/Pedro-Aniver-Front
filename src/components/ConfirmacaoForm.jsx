@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './ConfirmacaoForm.css';
 import backgroundVideo from './Pedrokkkk.mp4';
 import Infos from './Infos.jsx';
@@ -19,9 +19,12 @@ const ConfirmacaoForm = () => {
     console.log({ nome, celular });
   };
 
+  const vidRef=useRef();
+  useEffect(() => { vidRef.current.play(); },[])
+
   return (
     <div className="video-background">
-      <video autoPlay loop>
+      <video autoPlay loop ref={ vidRef }>
         <source src={backgroundVideo} type="video/mp4" />
         Seu navegador não suporta vídeos em HTML5.
       </video>
