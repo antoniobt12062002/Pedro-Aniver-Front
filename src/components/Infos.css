@@ -1,65 +1,68 @@
 .info-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Certifique-se de que o modal tenha um z-index maior */
+}
+
+.info-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  z-index: 2; /* Certifique-se de que o modal tenha um z-index maior */
+}
+
+.map-container {
+  position: relative; /* Alterado para relative para alinhamento correto */
+  width: 100%;
+  height: 200px; /* Defina a altura desejada para o mapa */
+  margin-top: 10px;
+  cursor: pointer;
+  overflow: hidden; /* Adicionado para evitar que o mapa vaze para fora do contêiner */
+}
+
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.buttonmoldal {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  align-items: center;
+}
+
+/* Media queries para telas menores */
+@media screen and (max-width: 768px) {
   .info-modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 90%; /* Alterado de 100% para 90% */
-    max-height: 90%; /* Alterado de 100% para 90% */
-    overflow-y: auto;
+    max-width: 100%;
   }
-  
-  .map-container {
-    width: 100%;
-    height: 200px; /* Defina a altura do seu mapa */
-    margin-top: 10px;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .info-modal-content {
+    max-width: 100%;
+    padding: 10px;
   }
-  
-  .map-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .buttonmoldal {
-    width: 100%;
-    height: 40px; /* Reduzido a altura para telas menores */
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 20px; /* Reduzido o raio da borda para telas menores */
-    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 700;
-    align-items: center;
-  }
-  
-  /* Media query para telas menores */
-  @media screen and (max-width: 768px) {
-    .info-modal-content {
-      max-width: 100%; /* Reduz a largura máxima do modal para telas menores */
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .info-modal-content {
-      max-width: 100%; /* Reduz ainda mais a largura máxima do modal para telas muito pequenas */
-      padding: 10px; /* Reduz o padding do modal para telas menores */
-    }
-  }
-  
+}
