@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ConfirmacaoForm.css';
-import backgroundVideo from './Pedrokkkk.mp4';
 import Infos from './Infos.jsx';
 import axios from 'axios';
+import gif from './Pedrokkkk.gif';
 
 const ConfirmacaoForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,11 +20,8 @@ const ConfirmacaoForm = () => {
   };
 
   return (
-    <div className="video-background">
-      <video autoPlay loop>
-        <source src={backgroundVideo} type="video/mp4" />
-        Seu navegador não suporta vídeos em HTML5.
-      </video>
+    <div className="gif-background">
+      <img src={gif} alt=''/>
       <div className="wrapper">
         <form onSubmit={handleSubmit}>
           <h1>Confirme sua presença</h1>

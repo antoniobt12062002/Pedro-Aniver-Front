@@ -7,7 +7,7 @@ const Infos = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleMapClick = () => {
-    window.open('https://www.google.com/maps/dir/-24.0549948,-52.3719842/chacara+roda+da+vida/@-24.0937822,-52.3905429,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94eda1b891b063b9:0xb809e4c7f5cae22d!2m2!1d-52.3302861!2d-24.1325771?entry=ttu', '_blank');
+    window.open('https://www.google.com/maps/dir//chacara+roda+da+vida/@-24.1324932,-52.3714856,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94eda1b891b063b9:0xb809e4c7f5cae22d!2m2!1d-52.3302861!2d-24.1325771?entry=ttu', '_blank');
   };
 
   return (
