@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ConfirmacaoForm.css';
 import backgroundVideo from './Pedrokkkk.mp4';
 import Infos from './Infos.jsx';
+import axios from 'axios';
 
 const ConfirmacaoForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,24 +11,12 @@ const ConfirmacaoForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      const response = await fetch('http://localhost:4040/tutorial/createData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nome, celular })
-      });
-
-      if (response.ok) {
+    await axios.post('http://15.228.43.35:4040/tutorial/createData', { nome, celular }).then(res => {
         setIsModalOpen(true); // Abre o modal quando a presença é confirmada
-      } else {
-        console.error('Falha ao enviar os dados');
-      }
-    } catch (error) {
-      console.error('Erro ao enviar os dados:', error);
-    }
+        console.log(res)
+    });
+
+    console.log({ nome, celular });
   };
 
   return (
