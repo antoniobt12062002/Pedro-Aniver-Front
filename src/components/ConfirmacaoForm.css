@@ -1,13 +1,11 @@
-.video-background {
+.gif-background {
     position: relative;
     width: 100vw;
     height: 100vh;
-    display: flex; /* Adiciona flexbox para centralizar o conteúdo */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    overflow: hidden; /* Garante que a imagem não transborde */
 }
 
-.video-background img {
+.gif-background img {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,8 +13,18 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    animation: slide 10s linear infinite; /* Adiciona a animação para repetir infinitamente */
 }
-  
+
+@keyframes slide {
+    0% {
+        transform: scale(1); /* Mantém a escala inicial */
+    }
+    100% {
+        transform: scale(1.1); /* Aumenta ligeiramente a escala para dar um efeito de animação */
+    }
+}
+
 .wrapper {
     max-width: 400px; /* Reduzindo a largura máxima para 400px */
     width: 80%; /* Reduzindo a largura para 80% da largura da tela */
