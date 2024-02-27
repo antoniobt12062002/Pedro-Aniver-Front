@@ -7,7 +7,7 @@ function Admin() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:4040/tutorial/getData');
+                const response = await axios.get('http://15.228.43.35:4040/tutorial/getData');
                 setDados(response.data);
             } catch (error) {
                 console.error('Ocorreu um erro ao buscar os dados:', error);
