@@ -24,7 +24,7 @@ const ConfirmacaoForm = () => {
 
   return (
     <div className="video-background">
-      <video autoPlay loop ref={ vidRef }>
+      <video autoPlay loop muted ref={ vidRef }>
         <source src={backgroundVideo} type="video/mp4" />
         Seu navegador não suporta vídeos em HTML5.
       </video>
